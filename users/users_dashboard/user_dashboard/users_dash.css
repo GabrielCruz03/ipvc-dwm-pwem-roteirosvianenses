@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+:root {
+  --azul1: #68ebe2;
+  --azul5: #68c6c0;
+  --azul2: #0034de;
+  --azul3: #0080ec;
+  --azul4: #00ccde;
+  --verde1: #056800;
+  --branco: #ffffff;
+  --preto: #000000;
+  --preto2: #191919;
+  --cinzento1: #8B7F8D;
+}
+
+* {
+  margin: 0 ;
+  padding: 0;
+}
+
+body{
+  margin: 10px 100px;
+}
+
+.margin {
+  margin: 0 100px;
+}
+
+
+.logo {
+  margin-top: 10px;
+}
+
+.profile-container {
+  display: flex;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin-top: 28px;
+  justify-content: space-between;
+
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.menu li {
+  margin-left: 40px;
+}
+
+
+.conteudo {
+  align-items: center;
+  text-align: center;
+  margin-top: 80px;
+}
+
+
+.cointainer {
+  border: 2px solid;
+  width: 320px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.bordas {
+  display: flex;
+  margin-top: 80px;
+  justify-content: space-around;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.botoes button {
+  padding: 8px 45px;
+  background-color: var(--azul1);
+  color: var(--branco);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.botoes button:hover{
+  background-color:var(--azul5) ;
+}
+
+
+
+/* FOOTER DO SITE - Responsivo */
+@media (max-width: 800px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width:600px) {
+  .footer-col {
+    width: 100%;
+  }
+}

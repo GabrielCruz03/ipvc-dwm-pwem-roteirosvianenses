@@ -1,0 +1,127 @@
+
+ a{
+     transition: 0.3s;
+ }
+ a:hover{
+     opacity: 0.7;
+ }
+ .logo{
+     margin-top: 10px;
+ }
+ nav{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     background: var(--branco);
+     height: 8vh;
+     margin-top: 30px;
+ }
+ .nav-list{
+    list-style: none; 
+    display: flex;
+ }
+ .nav-list li{
+     /* letter-spacing: 3px;
+     margin-left: 32px; */
+     padding: 20px;
+ }
+ /*TESTE*/
+ .nav-list li:not(.menu-btn-login)::after {
+    display: block;
+    content: '';
+    width: 0%;
+    background-color: var(--azul2);
+  
+  }
+  
+  .nav-list li:not(.menu-btn-register)::after {
+    display: block;
+    content: '';
+    width: 0%;
+    background-color: var(--azul2);
+  }
+  .nav-list li:hover::after {
+    width: 100%;
+  }
+  
+  .nav-list .menu-btn-login {
+    border: 1px solid var(--preto);
+    border-radius: 10px;
+    margin-left: 30px;
+  }
+
+ 
+  
+  .nav-list li.menu-btn-register {
+    border: 1px solid var(--preto);
+    border-radius: 10px;
+    padding: 5px 40px;
+    margin-left: 30px;
+  }
+  .menu-btn-login:hover{
+    border: solid 2px;
+    border-color: #04b9d0;
+  }
+  
+  .menu-btn-register:hover{
+    border: solid 2px var(--azul2);
+  }
+ /*TESTE FIM*/
+ .mobile-menu{
+     display: none;
+     cursor: pointer;
+ }
+ .mobile-menu div{
+    width: 32px;
+    height: 2px; 
+    background: var(--preto);
+    margin: 8px;
+    transition: 0.3s;
+ }
+ @media (max-width:999px){
+     body{
+         overflow-x: hidden;
+     }
+     .nav-list{
+         position: absolute;
+         top: 8vh;
+         right: 0;
+         width: 50vw;
+         height: 92vh;
+         background: #23232e;
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-around;
+         transform: translateX(100%);
+         transition: transform 0.3s ease-in;
+     }
+     .nav-list li{
+         margin-left: 0;
+         opacity: 0;
+     }
+     .mobile-menu{
+         display: block;
+     }
+ }
+ .nav-list.active{
+     transform: translateX(0);
+ }
+ @keyframes navLinkFade{
+     from{
+         opacity: 0;
+         transform: translateX(50px);
+     }
+     to{
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+ .mobile-menu.active.line1{
+ transform: rotate(-45deg) translate(-8px, 8px);
+ }
+     .mobile-menu.active.line2{
+ opacity: 0;
+     }
+     .mobile-menu.active.line3{
+ transform: rotate(45deg) translate(-5px, -7px);
+     }

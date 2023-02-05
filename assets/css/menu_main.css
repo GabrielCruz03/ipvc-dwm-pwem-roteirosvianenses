@@ -1,0 +1,61 @@
+/*----- menu ---- */
+nav {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--branco)(189, 189, 189);
+  }
+  
+  nav .logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  
+  
+  
+  /* CSS Responsivo - Menu  */
+  @media (max-width: 850px) {
+  
+    nav ul {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: var(--preto);
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      width: 60%;
+      transform: translateX(-100%);
+      transition: 0.6s;
+    }
+  
+    nav ul.activo {
+      transform: translateX(0%);
+    }
+  
+    nav ul li.menu-btn-login {
+      border: 1px solid var(--white);
+      margin-left: 0;
+    }
+  
+    nav ul li.menu-btn-register {
+      border: 1px solid var(--white);
+      margin-left: 0;
+    }
+  
+    nav ul li:not(.menu-btn-login)::after {
+      background-color: var(--blue);
+    }
+  
+    nav ul li:not(.menu-btn-register)::after {
+      background-color: var(--blue);
+    }
+  
+    nav ul li a {
+      color: var(--white);
+      font-size: 24px;
+    }
+  
+  }
