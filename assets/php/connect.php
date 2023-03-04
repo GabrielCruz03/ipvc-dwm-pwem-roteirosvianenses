@@ -1,6 +1,6 @@
 <?php
 
-$db_name = "mysql:host=localhost;dbname=roteirosvianenses";
+$db_name = "mysql:host=26.96.103.212:8080;dbname=roteirosvianenses";
 $username = "root";
 $password = "";
 
