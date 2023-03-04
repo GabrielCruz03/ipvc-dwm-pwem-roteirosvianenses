@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
    $name = filter_var($name, FILTER_SANITIZE_STRING);
    $email = $_POST['email'];
    $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $pass = md5($_POST['pass']);
+   $pass = md5($_POST['password']);
    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
    $cpass = md5($_POST['cpass']);
    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
    $image = $_FILES['image']['name'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_size = $_FILES['image']['size'];
-   $image_folder = '../../assets/images/user_profile_img'.$image;
+   $image_folder = '../assets/images/user_profile_img'.$image;
 
    $select = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
    $select->execute([$email]);
@@ -89,7 +89,7 @@ if(isset($_POST['submit'])){
       <h3>register now</h3>
       <input type="text" required placeholder="Nome de Utilizador" class="box" name="name">
       <input type="email" required placeholder="E-Mail" class="box" name="email">
-      <input type="password" required placeholder="Password" class="box" name="pass">
+      <input type="password" required placeholder="Password" class="box" name="password">
       <input type="password" required placeholder="Confirme a Password" class="box" name="cpass">
       <input type="file" name="image" required class="box" accept="image/jpg, image/png, image/jpeg">
       <p>Já tem conta? <a href="login.php">Entrar Agora</a></p>

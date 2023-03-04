@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Nov-2022 às 12:32
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 04-Mar-2023 às 11:25
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `imagens` (
   `id_imagem` int(12) NOT NULL,
   `imagem` longblob NOT NULL,
   `nome_imagem` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -43,7 +43,7 @@ CREATE TABLE `pontos` (
   `id_ponto` int(12) NOT NULL,
   `nome` varchar(120) NOT NULL,
   `descricao` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -54,7 +54,7 @@ CREATE TABLE `pontos` (
 CREATE TABLE `pontos_imagens` (
   `id_ponto` int(12) NOT NULL,
   `id_imagem` int(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,7 @@ CREATE TABLE `roteiro` (
   `id_roteiro` int(12) NOT NULL,
   `nome` varchar(120) NOT NULL,
   `descricao` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -77,7 +77,7 @@ CREATE TABLE `roteiro` (
 CREATE TABLE `roteiro_imagem` (
   `id_roteiro` int(12) NOT NULL,
   `id_imagem` int(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,7 @@ CREATE TABLE `roteiro_pontos` (
   `id_roteiro` int(12) NOT NULL,
   `id_ponto` int(12) NOT NULL,
   `ordem` int(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -104,16 +104,18 @@ CREATE TABLE `users` (
   `num_tel` varchar(15) DEFAULT NULL,
   `password` varchar(64) NOT NULL,
   `user_type` text NOT NULL DEFAULT 'user',
-  `code` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `code` varchar(15) DEFAULT NULL,
+  `image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`ID`, `name`, `email`, `num_tel`, `password`, `user_type`, `code`) VALUES
-(50, 'afonso', 'afonsob@ipvc.pt', '213913123', 'afonso1', 'user', '351'),
-(51, 'admin', 'admin@mail.pt', '111111111', 'admin', 'user', '351');
+INSERT INTO `users` (`ID`, `name`, `email`, `num_tel`, `password`, `user_type`, `code`, `image`) VALUES
+(50, 'afonso', 'afonsob@ipvc.pt', '213913123', 'afonso1', 'user', '351', ''),
+(51, 'admin', 'admin@mail.pt', '111111111', 'admin', 'admin', '351', ''),
+(52, 'gabriel', 'gabriel@mail.pt', NULL, '647431b5ca55b04fdf3c2fce31ef1915', 'user', NULL, '127209801_1681630705348011_426768434725257000_n.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -190,7 +192,7 @@ ALTER TABLE `roteiro`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Restrições para despejos de tabelas
